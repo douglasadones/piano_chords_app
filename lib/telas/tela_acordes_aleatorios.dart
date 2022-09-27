@@ -33,13 +33,12 @@ class _TelaAcordesAleatoriosState extends State<TelaAcordesAleatorios> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         const SizedBox(
-          height: 20.0,
+          height: 90.0,
         ),
         Center(
           child: Text(
             kAcordeEscolhidoUI,
-            style:
-                const TextStyle(fontSize: 100.0, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 80.0, fontWeight: FontWeight.bold),
           ),
         ),
         kMostrandoAcorde(kAcordeEscolhido),
@@ -49,7 +48,6 @@ class _TelaAcordesAleatoriosState extends State<TelaAcordesAleatorios> {
               if (kFuncaoBotao == 'SORTEAR') {
                 kAcordeEscolhido =
                     kListaEscolhida[Random().nextInt(kListaEscolhida.length)];
-                // kAcordeEscolhido = 'A#dimtri';
                 kAcordeEscolhidoUI = kTratandoCasoDim(kAcordeEscolhido);
                 kFuncaoBotao = 'MOSTRAR ACORDE';
                 kMostrarImagem = false;

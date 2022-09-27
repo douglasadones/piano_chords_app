@@ -104,6 +104,7 @@ class _TelaInicialState extends State<TelaInicial> {
                 style: TextButton.styleFrom(backgroundColor: Colors.blue),
                 onPressed: () {
                   setState(() {
+                    kAcordeEscolhido = '...';
                     kAcordeEscolhidoUI = '...';
                     kMostrarImagem = false;
                     if (kTipoAcorde == Tipo.triades) {
