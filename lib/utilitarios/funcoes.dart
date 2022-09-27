@@ -29,7 +29,9 @@ kMostrandoAcorde(String acorde) {
 
 String kTratandoEnarmonia(String acorde) {
   /// Verifica o acorde escolhido e faz o tratamento da enarmonia. Isso beneficia
-  /// a quantidade de imagens usadas para o app
+  /// a quantidade de imagens e áudios usados no aplicativo.
+  /// Processo: Transforma a String em uma lista, realiza o tratamento e transforma
+  /// a lista novamente em uma string.
   List<String> acordeSeparado = acorde.split('');
   if (acordeSeparado.length > 1) {
     if (acordeSeparado[0] == 'A' && acordeSeparado[1] == 'b') {
@@ -93,6 +95,7 @@ String kTratandoCasoDim(String acorde) {
   String acordeNovo = acordeSeparado.join('');
   if (acordeAntigo != acordeNovo) {
     acordeSeparado.add('°');
+    acordeSeparado.remove('tri');
     acorde = acordeSeparado.join('');
     return acorde;
   } else {

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'funcoes.dart';
-import 'constantes.dart';
+import '../utilitarios/funcoes.dart';
+import '../utilitarios/constantes.dart';
 import 'dart:math';
 
-class PaginaDosAcordes extends StatefulWidget {
-  const PaginaDosAcordes({Key? key}) : super(key: key);
+class TelaAcordesAleatorios extends StatefulWidget {
+  const TelaAcordesAleatorios({Key? key}) : super(key: key);
 
   @override
-  State<PaginaDosAcordes> createState() => _PaginaDosAcordesState();
+  State<TelaAcordesAleatorios> createState() => _TelaAcordesAleatoriosState();
 }
 
-class _PaginaDosAcordesState extends State<PaginaDosAcordes> {
+class _TelaAcordesAleatoriosState extends State<TelaAcordesAleatorios> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,6 +49,7 @@ class _PaginaDosAcordesState extends State<PaginaDosAcordes> {
               if (kFuncaoBotao == 'SORTEAR') {
                 kAcordeEscolhido =
                     kListaEscolhida[Random().nextInt(kListaEscolhida.length)];
+                // kAcordeEscolhido = 'A#dimtri';
                 kAcordeEscolhidoUI = kTratandoCasoDim(kAcordeEscolhido);
                 kFuncaoBotao = 'MOSTRAR ACORDE';
                 kMostrarImagem = false;

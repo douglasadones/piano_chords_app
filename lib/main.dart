@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pagina_inicial.dart';
+import 'telas/tela_inicial.dart';
 
 void main() {
   runApp(const AcordesApp());
@@ -12,7 +12,7 @@ class AcordesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Pagina_Inicial(),
+      home: TelaInicial(),
     );
   }
 }
