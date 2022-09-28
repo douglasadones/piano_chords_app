@@ -106,6 +106,7 @@ class _TelaInicialState extends State<TelaInicial> {
                   setState(() {
                     kAcordeEscolhido = '...';
                     kAcordeEscolhidoUI = '...';
+                    kFuncaoBotao == 'SORTEAR';
                     kMostrarImagem = false;
                     if (kTipoAcorde == Tipo.triades) {
                       kListaEscolhida =
@@ -117,7 +118,7 @@ class _TelaInicialState extends State<TelaInicial> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => TelaAcordesAleatorios(),
+                        builder: (context) => const TelaAcordesAleatorios(),
                       ),
                     );
                   });
@@ -142,6 +143,7 @@ class _TelaInicialState extends State<TelaInicial> {
                       kAcordeEscolhido = '...';
                       kAcordeEscolhidoUI = '...';
                       kMostrarImagem = false;
+                      kFuncaoBotao == 'SORTEAR';
                       if (kTipoAcorde == Tipo.triades) {
                         kListaEscolhida =
                             kMapAcordes['triades']?['acordesDificeis'];
@@ -152,7 +154,7 @@ class _TelaInicialState extends State<TelaInicial> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => TelaAcordesAleatorios(),
+                          builder: (context) => const TelaAcordesAleatorios(),
                         ),
                       );
                     });
@@ -251,14 +253,23 @@ class _TelaInicialState extends State<TelaInicial> {
                       style: TextButton.styleFrom(backgroundColor: Colors.blue),
                       onPressed: () {
                         setState(() {
+                          kAcordeEscolhido = '...';
                           kAcordeEscolhidoUI = '...';
                           kMostrarImagem = false;
-                          kListaEscolhida =
-                              kMapAcordes['triade']?['acordesFaceis'];
+                          kFuncaoBotao == 'SORTEAR';
+                          kMostrarImagem = false;
+                          if (kTipoAcorde == Tipo.triades) {
+                            kListaEscolhida =
+                                kMapAcordes['triades']?['acordesFaceis'];
+                          } else {
+                            kListaEscolhida =
+                                kMapAcordes['tetrades']?['acordesFaceis'];
+                          }
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => TelaAcordesAleatorios(),
+                              builder: (context) =>
+                                  const TelaAcordesAleatorios(),
                             ),
                           );
                         });
@@ -283,12 +294,20 @@ class _TelaInicialState extends State<TelaInicial> {
                             kAcordeEscolhido = '...';
                             kAcordeEscolhidoUI = '...';
                             kMostrarImagem = false;
-                            kListaEscolhida =
-                                kMapAcordes['triade']?['acordesDificeis'];
+                            kFuncaoBotao == 'SORTEAR';
+                            kMostrarImagem = false;
+                            if (kTipoAcorde == Tipo.triades) {
+                              kListaEscolhida =
+                                  kMapAcordes['triades']?['acordesDificeis'];
+                            } else {
+                              kListaEscolhida =
+                                  kMapAcordes['tetrades']?['acordesDificeis'];
+                            }
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => TelaAcordesAleatorios(),
+                                builder: (context) =>
+                                    const TelaAcordesAleatorios(),
                               ),
                             );
                           });
