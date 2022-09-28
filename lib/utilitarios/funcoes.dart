@@ -5,7 +5,7 @@ import 'constantes.dart';
 kMostrandoAcorde(String acorde) {
   /// Após aplicar o tratamento da Enarmonia, mostra a imagem do acorde assim que
   /// o botão 'MOSTRAR ACORDE' for pressionado.
-  if (kMostrarImagem) {
+  if (kMostrarImagem && acorde != 'Acorde Não Encontrado') {
     String acordeTratado = kTratandoEnarmonia(acorde);
     acorde = acordeTratado;
     return Expanded(
@@ -92,7 +92,7 @@ String kTratandoEnarmonia(String acorde) {
       return acorde;
     }
   } on RangeError {
-    return 'Acorde Não encontrado';
+    return '';
   } catch (e) {
     return 'Acorde Não encontrado, Erro: $e';
   }

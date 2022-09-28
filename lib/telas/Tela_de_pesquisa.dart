@@ -12,30 +12,39 @@ class TelaDePesquisa extends StatefulWidget {
 class _TelaDePesquisaState extends State<TelaDePesquisa> {
   String acordepesquisado = '';
 
-  // Widget tratandoErro(acorde) {
-  //   try {
-  //     return Text(acorde);
-  //   } catch (e) {
-  //     return Text('Acorde Não encontrado, Erro: $e');
-  //   }
-  // }
+  Widget mostrarImagemDinamica(acorde) {
+    /// Verifica se o acorde pesquisado está na lista de todos os acordes
+    /// Em caso afirmativo, mostra a imagem, já em caso negativo mostra um Text()
+    if (kTodosOsAcordes.contains(acorde)) {
+      return kMostrandoAcorde(acorde);
+    } else if (acorde == '') {
+      return Text(acorde);
+    } else {
+      return const Text('Acorde Não Encontrado');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Pesquisa de Acordes'),
+          title: const Text('Pesquisa de Acordes'),
         ),
         body: Column(
           children: [
             Container(
               padding: const EdgeInsets.all(20.0),
               child: TextField(
+                keyboardType: TextInputType.text,
+                textCapitalization:
+                    TextCapitalization.sentences, // Primeira letra maiúscula
                 style: const TextStyle(color: Colors.black),
                 decoration: kEstiloBarraDePesquisa,
                 onChanged: (String pesquisando) {
+                  // Input em tempo real
                   setState(() {
+                    kMostrarImagem = true;
                     acordepesquisado = pesquisando;
                     acordepesquisado = kTratandoEnarmonia(acordepesquisado);
                   });
@@ -43,10 +52,10 @@ class _TelaDePesquisaState extends State<TelaDePesquisa> {
               ),
             ),
             Expanded(
-              child: Container(
-                child: Text(
-                  acordepesquisado,
-                ),
+              child: Column(
+                children: [
+                  mostrarImagemDinamica(acordepesquisado),
+                ],
               ),
             )
           ],
