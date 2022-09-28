@@ -32,58 +32,69 @@ String kTratandoEnarmonia(String acorde) {
   /// a quantidade de imagens e áudios usados no aplicativo.
   /// Processo: Transforma a String em uma lista, realiza o tratamento e transforma
   /// a lista novamente em uma string.
-  List<String> acordeSeparado = acorde.split('');
-  if (acordeSeparado.length > 1) {
-    if (acordeSeparado[0] == 'A' && acordeSeparado[1] == 'b') {
-      acordeSeparado[0] = 'G';
-      acordeSeparado[1] = '#';
-      acorde = acordeSeparado.join('');
-      return acorde;
-    } else if (acordeSeparado[0] == 'D' && acordeSeparado[1] == 'b') {
-      acordeSeparado[0] = 'C';
-      acordeSeparado[1] = '#';
-      acorde = acordeSeparado.join('');
-      return acorde;
-    } else if (acordeSeparado[0] == 'G' && acordeSeparado[1] == 'b') {
-      acordeSeparado[0] = 'F';
-      acordeSeparado[1] = '#';
-      acorde = acordeSeparado.join('');
-      return acorde;
-    } else if (acordeSeparado[0] == 'B' && acordeSeparado[1] == 'b') {
-      acordeSeparado[0] = 'A';
-      acordeSeparado[1] = '#';
-      acorde = acordeSeparado.join('');
-      return acorde;
-    } else if (acordeSeparado[0] == 'E' && acordeSeparado[1] == 'b') {
-      acordeSeparado[0] = 'D';
-      acordeSeparado[1] = '#';
-      acorde = acordeSeparado.join('');
-      return acorde;
-    } else if (acordeSeparado[0] == 'C' && acordeSeparado[1] == 'b') {
-      acordeSeparado[0] = 'B';
-      acordeSeparado.removeAt(1);
-      acorde = acordeSeparado.join('');
-      return acorde;
-    } else if (acordeSeparado[0] == 'F' && acordeSeparado[1] == 'b') {
-      acordeSeparado[0] = 'E';
-      acordeSeparado.removeAt(1);
-      acorde = acordeSeparado.join('');
-      return acorde;
-    } else if (acordeSeparado[0] == 'E' && acordeSeparado[1] == '#') {
-      acordeSeparado[0] = 'F';
-      acordeSeparado.removeAt(1);
-      acorde = acordeSeparado.join('');
-      return acorde;
-    } else if (acordeSeparado[0] == 'B' && acordeSeparado[1] == '#') {
-      acordeSeparado[0] = 'C';
-      acordeSeparado.removeAt(1);
-      acorde = acordeSeparado.join('');
-      return acorde;
+  try {
+    List<String> acordeSeparado = acorde.split('');
+    acordeSeparado[0] = acordeSeparado[0].toUpperCase();
+    if (acordeSeparado.length > 1) {
+      if (acordeSeparado[0] == 'A' && acordeSeparado[1] == 'b') {
+        acordeSeparado[0] = 'G';
+        acordeSeparado[1] = '#';
+        acorde = acordeSeparado.join('');
+        return acorde;
+      } else if (acordeSeparado[0] == 'D' && acordeSeparado[1] == 'b') {
+        acordeSeparado[0] = 'C';
+        acordeSeparado[1] = '#';
+        acorde = acordeSeparado.join('');
+        return acorde;
+      } else if (acordeSeparado[0] == 'G' && acordeSeparado[1] == 'b') {
+        acordeSeparado[0] = 'F';
+        acordeSeparado[1] = '#';
+        acorde = acordeSeparado.join('');
+        return acorde;
+      } else if (acordeSeparado[0] == 'B' && acordeSeparado[1] == 'b') {
+        acordeSeparado[0] = 'A';
+        acordeSeparado[1] = '#';
+        acorde = acordeSeparado.join('');
+        return acorde;
+      } else if (acordeSeparado[0] == 'E' && acordeSeparado[1] == 'b') {
+        acordeSeparado[0] = 'D';
+        acordeSeparado[1] = '#';
+        acorde = acordeSeparado.join('');
+        return acorde;
+      } else if (acordeSeparado[0] == 'C' && acordeSeparado[1] == 'b') {
+        acordeSeparado[0] = 'B';
+        acordeSeparado.removeAt(1);
+        acorde = acordeSeparado.join('');
+        return acorde;
+      } else if (acordeSeparado[0] == 'F' && acordeSeparado[1] == 'b') {
+        acordeSeparado[0] = 'E';
+        acordeSeparado.removeAt(1);
+        acorde = acordeSeparado.join('');
+        return acorde;
+      } else if (acordeSeparado[0] == 'E' && acordeSeparado[1] == '#') {
+        acordeSeparado[0] = 'F';
+        acordeSeparado.removeAt(1);
+        acorde = acordeSeparado.join('');
+        return acorde;
+      } else if (acordeSeparado[0] == 'B' && acordeSeparado[1] == '#') {
+        acordeSeparado[0] = 'C';
+        acordeSeparado.removeAt(1);
+        acorde = acordeSeparado.join('');
+        return acorde;
+      } else {
+        acordeSeparado[0] = acordeSeparado[0].toUpperCase();
+        acorde = acordeSeparado.join('');
+        return acorde;
+      }
     } else {
+      acordeSeparado[0] = acordeSeparado[0].toUpperCase();
+      acorde = acordeSeparado.join('');
       return acorde;
     }
-  } else {
-    return acorde;
+  } on RangeError {
+    return 'Acorde Não encontrado';
+  } catch (e) {
+    return 'Acorde Não encontrado, Erro: $e';
   }
 }
 

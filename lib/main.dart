@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'telas/Tela_de_pesquisa.dart';
 import 'telas/tela_inicial.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class AcordesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: TelaInicial(),
+      home: TelaDePesquisa(),
     );
   }
 }
