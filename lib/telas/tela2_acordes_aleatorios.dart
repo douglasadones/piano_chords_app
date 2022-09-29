@@ -3,14 +3,14 @@ import '../utilitarios/funcoes.dart';
 import '../utilitarios/constantes.dart';
 import 'dart:math';
 
-class TelaAcordesAleatorios extends StatefulWidget {
-  const TelaAcordesAleatorios({Key? key}) : super(key: key);
+class Tela2AcordesAleatorios extends StatefulWidget {
+  const Tela2AcordesAleatorios({Key? key}) : super(key: key);
 
   @override
-  State<TelaAcordesAleatorios> createState() => _TelaAcordesAleatoriosState();
+  State<Tela2AcordesAleatorios> createState() => _Tela2AcordesAleatoriosState();
 }
 
-class _TelaAcordesAleatoriosState extends State<TelaAcordesAleatorios> {
+class _Tela2AcordesAleatoriosState extends State<Tela2AcordesAleatorios> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
