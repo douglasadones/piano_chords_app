@@ -403,10 +403,10 @@ MaterialColor kCorInativa = Colors.grey;
 InputDecoration kEstiloBarraDePesquisa = InputDecoration(
   filled: true,
   fillColor: Colors.blue[200],
-  icon: const Icon(
-    Icons.search,
-    color: Colors.blue,
-  ),
+  // icon: const Icon(
+  //   Icons.search,
+  //   color: Colors.blue,
+  // ),
   hintText: 'Digite o Nome do Acorde',
   hintStyle: TextStyle(color: Colors.grey[600]),
   border: const OutlineInputBorder(
