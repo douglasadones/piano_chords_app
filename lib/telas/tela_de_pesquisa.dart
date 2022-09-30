@@ -78,6 +78,7 @@ class _TelaDePesquisaState extends State<TelaDePesquisa> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: true,
         appBar: AppBar(
           title: const Text('Pesquisa de Acordes'),
         ),
@@ -125,48 +126,33 @@ class _TelaDePesquisaState extends State<TelaDePesquisa> {
     );
   }
 
-  Row buildLandscape() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+  Column buildLandscape() {
+    return Column(
       children: [
-        const Expanded(
-          child: SizedBox(),
-        ),
-        Expanded(
-          flex: 5,
-          child: SingleChildScrollView(
-            child: SizedBox(
-              child: TextField(
-                keyboardType: TextInputType.text,
-                textCapitalization:
-                    TextCapitalization.sentences, // Primeira letra maiúscula
-                style: const TextStyle(color: Colors.black),
-                decoration: kEstiloBarraDePesquisa,
-                onChanged: (String pesquisando) {
-                  // Input em tempo real
-                  setState(() {
-                    kMostrarImagem = true;
-                    acordepesquisado = pesquisando;
-                    acordepesquisado = kTratandoEnarmonia(acordepesquisado);
-                  });
-                },
-              ),
-            ),
+        Container(
+          padding: const EdgeInsets.all(20.0),
+          child: TextField(
+            keyboardType: TextInputType.text,
+            textCapitalization:
+                TextCapitalization.sentences, // Primeira letra maiúscula
+            style: const TextStyle(color: Colors.black),
+            decoration: kEstiloBarraDePesquisa,
+            onChanged: (String pesquisando) {
+              // Input em tempo real
+              setState(() {
+                kMostrarImagem = true;
+                acordepesquisado = pesquisando;
+                acordepesquisado = kTratandoEnarmonia(acordepesquisado);
+              });
+            },
           ),
         ),
-        const SizedBox(
-          width: 40,
-        ),
         Expanded(
-          flex: 11,
           child: Column(
             children: [
               mostrarImagemDinamica(acordepesquisado),
             ],
           ),
-        ),
-        const Expanded(
-          child: SizedBox(),
         ),
       ],
     );
