@@ -19,15 +19,18 @@ class _TelaDePesquisaState extends State<TelaDePesquisa> {
   <p><ul>
   <li><strong>X: </strong>Tríades Maiores</li>
   <li><strong>X<span class='NotasdoAcorde'>m</span>: </strong>Tríades menores</li>
+  <li><strong>X<span class='NotasdoAcorde'>(sus4)</span>: </strong>Tríades Suspensas Com Quarta</li>
   <li><strong>X<span class='NotasdoAcorde'>7M</span>: </strong>Acordes Maiores Com Sétima Maior</li>
   <li><strong>X<span class='NotasdoAcorde'>7</span>: </strong>Acordes Maiores Com Sétima menor</li>
   <li><strong>X<span class='NotasdoAcorde'>m7</span>: </strong>Acordes menores Com Sétima menor</li>
+  <li><strong>X<span class='NotasdoAcorde'>m7M</span>: </strong>Acordes menores Com Sétima Maior</li>
   <li><strong>X<span class='NotasdoAcorde'>m7(b5)</span>: </strong>Acordes menores Com Sétima menor e Quinta Diminuta (Acordes Meio-Diminutos)</li>
   <li><strong>X<span class='NotasdoAcorde'>dimtri</span>: </strong>Acordes Diminutos (Tríade)</li>
   <li><strong>X<span class='NotasdoAcorde'>dim</span>: </strong>Acordes Diminutos (Tétrade)</li>
-  <li><strong>X<span class='NotasdoAcorde'>#</span>: </strong>Variação Sustenida dos itens acima</li>
-  <li><strong>X<span class='NotasdoAcorde'>b</span>: </strong>Variação Bemol dos itens acima</li>
+  <li><strong><span class='NotasdoAcorde'>#</span>: </strong>Variação Sustenida dos itens acima</li>
+  <li><strong><span class='NotasdoAcorde'>b</span>: </strong>Variação Bemol dos itens acima</li>
   </ul></p>
+  <p><span class='obs'>Nota: <strong>"X"</strong>= Nota Tônica Do Acorde</span></p>
   <h2>Som dos Acordes:</h2>
   <p><ul><li>Para ouvir o som do acorde escolhido, basta <ins>tocar na imagem</ins> do acorde.</li></ul></p></body>""";
 
@@ -60,6 +63,7 @@ class _TelaDePesquisaState extends State<TelaDePesquisa> {
                     fontSize: FontSize.large, textAlign: TextAlign.justify),
                 "strong": Style(fontSize: FontSize.larger),
                 "span.NotasdoAcorde": Style(color: Colors.red),
+                "span.obs": Style(color: Colors.red),
               },
             ),
           ),
@@ -131,8 +135,7 @@ class _TelaDePesquisaState extends State<TelaDePesquisa> {
         Expanded(
           flex: 5,
           child: SingleChildScrollView(
-            child: Container(
-              // padding: const EdgeInsets.all(20.0),
+            child: SizedBox(
               child: TextField(
                 keyboardType: TextInputType.text,
                 textCapitalization:

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class containerReutilizavel extends StatelessWidget {
-  const containerReutilizavel(
-      {required this.funcao, required this.flex, this.onPress});
+class ContainerReutilizavel extends StatelessWidget {
+  const ContainerReutilizavel(
+      {super.key, required this.funcao, required this.flex, this.onPress});
 
   final String funcao;
   final int flex;
@@ -38,6 +38,5 @@ class containerReutilizavel extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

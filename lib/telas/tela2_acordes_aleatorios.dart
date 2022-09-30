@@ -38,7 +38,7 @@ class _Tela2AcordesAleatoriosState extends State<Tela2AcordesAleatorios> {
         Center(
           child: Text(
             kAcordeEscolhidoUI,
-            style: const TextStyle(fontSize: 80.0, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 60.0, fontWeight: FontWeight.bold),
           ),
         ),
         kMostrandoAcorde(kAcordeEscolhido),
@@ -65,7 +65,7 @@ class _Tela2AcordesAleatoriosState extends State<Tela2AcordesAleatorios> {
               child: Text(
                 kFuncaoBotao,
                 style: const TextStyle(
-                  fontSize: 30.0,
+                  fontSize: 30,
                   color: Colors.white,
                 ),
               ),

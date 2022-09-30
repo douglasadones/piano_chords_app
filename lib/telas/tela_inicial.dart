@@ -39,7 +39,7 @@ class _TelaInicialState extends State<TelaInicial> {
         const Expanded(
           child: SizedBox(),
         ),
-        containerReutilizavel(
+        ContainerReutilizavel(
           funcao: 'Sortear Acordes',
           flex: 3,
           onPress: () {
@@ -53,7 +53,7 @@ class _TelaInicialState extends State<TelaInicial> {
             });
           },
         ),
-        containerReutilizavel(
+        ContainerReutilizavel(
           funcao: 'Pesquisar Acordes',
           flex: 3,
           onPress: () {
@@ -81,7 +81,7 @@ class _TelaInicialState extends State<TelaInicial> {
         const Expanded(
           child: SizedBox(),
         ),
-        containerReutilizavel(
+        ContainerReutilizavel(
           funcao: 'Sortear Acordes',
           flex: 3,
           onPress: () {
@@ -95,7 +95,7 @@ class _TelaInicialState extends State<TelaInicial> {
             });
           },
         ),
-        containerReutilizavel(
+        ContainerReutilizavel(
           funcao: 'Pesquisar Acordes',
           flex: 3,
           onPress: () {
