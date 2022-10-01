@@ -78,7 +78,7 @@ class _TelaDePesquisaState extends State<TelaDePesquisa> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        resizeToAvoidBottomInset: true,
+        // resizeToAvoidBottomInset: true, // ativa o modo landscape quando o keyboard aparece.
         appBar: AppBar(
           title: const Text('Pesquisa de Acordes'),
         ),
@@ -95,7 +95,7 @@ class _TelaDePesquisaState extends State<TelaDePesquisa> {
     return Column(
       children: [
         const SizedBox(
-          height: 30,
+          height: 20,
         ),
         Container(
           padding: const EdgeInsets.all(20.0),
