@@ -1,5 +1,5 @@
 # piano chords app
-Esse aplicativo tem como objetivo ajudar os iniciantes no piano ou na música a entender a estrutura dos acordes básicos. 
+Esse aplicativo tem como objetivo ajudar os iniciantes no piano ou na música a entender e internalizar a estrutura dos acordes básicos. 
 ## Funções:
   * Sortear Acordes no estilo "Flashcards"
   * Pesquisar Acordes
