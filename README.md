@@ -1,16 +1,11 @@
-# piano_chords_app
+# piano chords app
+Esse aplicativo tem como objetivo ajudar os iniciantes no piano ou na música a entender a estrutura dos acordes básicos. 
+## Funções:
+  * Sortear Acordes no estilo "Flashcards"
+  * Pesquisar Acordes
+  * Som do acorde: Ao tocar na imagem do acorde, o usuário irá escutar o som do acorde.
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p align="center">
+<img src="https://user-images.githubusercontent.com/95550011/194463089-fa489bb5-50ab-4350-923d-75c903e7d880.gif"/>
+<img src="https://user-images.githubusercontent.com/95550011/194462436-ad75f533-bca5-49c4-85a5-e9e4875cac81.gif"/>
+</p>
