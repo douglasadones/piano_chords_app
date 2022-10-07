@@ -13,20 +13,18 @@ class TelaInicial extends StatefulWidget {
 class _TelaInicialState extends State<TelaInicial> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Center(
-            child: Text('Acordes No Piano'),
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Center(
+          child: Text('Acordes No Piano'),
         ),
-        body: SafeArea(
-          child: OrientationBuilder(
-            builder: (context, orientation) =>
-                orientation == Orientation.portrait
-                    ? buildPortrait(context)
-                    : buildLandscape(context),
-          ),
+      ),
+      body: SafeArea(
+        child: OrientationBuilder(
+          builder: (context, orientation) =>
+              orientation == Orientation.portrait
+                  ? buildPortrait(context)
+                  : buildLandscape(context),
         ),
       ),
     );

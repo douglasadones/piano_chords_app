@@ -76,13 +76,13 @@ class _TelaDePesquisaState extends State<TelaDePesquisa> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        // resizeToAvoidBottomInset: true, // ativa o modo landscape quando o keyboard aparece.
-        appBar: AppBar(
-          title: const Text('Pesquisa de Acordes'),
-        ),
-        body: OrientationBuilder(
+    return Scaffold(
+      // resizeToAvoidBottomInset: true, // ativa o modo landscape quando o keyboard aparece.
+      appBar: AppBar(
+        title: const Text('Pesquisa de Acordes'),
+      ),
+      body: SafeArea(
+        child: OrientationBuilder(
           builder: (context, orientation) => orientation == Orientation.portrait
               ? buildPortrait()
               : buildLandscape(),
